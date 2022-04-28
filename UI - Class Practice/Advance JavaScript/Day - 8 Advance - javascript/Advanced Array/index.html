@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Array</title>
+</head>
+<body>
+    <script>
+        // Map Method 
+        // map() => will be having call-back functio & it`s output is compulsory in the form of array
+        // it creates new array & it won`t distrub the original array
+
+        // Normal - Regular Method (Using For Loop)
+
+        const arr = [2,4,6,8,10];
+        const res = [];
+        for (let i = 0; i <arr.length; i++){
+            const Multiple = arr[i] * 2;
+            res.push(Multiple);
+        }
+        console.log(res);
+
+        console.log(`--------- Using For of Loop ----------`);
+
+        const resof = [];
+        for(let mov of arr){
+            const mul = mov*2; // using multiplication operator
+            resof.push(mul);
+        }
+        console.log(resof);
+
+        console.log(`--------- Using Map ----------`);
+
+        const resMap = arr.map(function (mov,i,arr){
+            return mov *2;
+        });
+        console.log(resMap);
+
+        console.log(`--------- Using Map - single line code ----------`);
+
+        const restMap = arr.map((mov,i,arr)=> mov*2);
+        console.log(resMap)
+
+        // we can`t use for each it is not a method - because it`s a loop 
+
+
+        // 2) Filter Method
+// it compare each element - using boolean expression 
+        // filter the below array which is lesser than 5
+
+        console.log(`--------- Filter Method ---------`);
+        let arry = [1,2,3,4,5,6,7,8,9,10];
+        const num = arry.filter((mov,i,arr) => {
+            return mov >= 5;
+        });
+        console.log(num);
+
+        console.log(`--------- using Filter Method - single line code ---------`);
+
+        const num1 = arry.filter((mov,i,arr) => mov >= 5);
+        console.log(num1);
+        console.log(arry.length); // 10
+
+
+        // 3) Reduce Method
+         // Paramente(Accumulator, Movement, Index, Array)
+         // this is snow ball effect - Because it star with small ends with big
+         // Accumulator - To store the element we need container that is Accumulator(which stories Temporarly) 
+
+         console.log(`--------- Reduce Method ---------`);
+         let arr1 = [1,2,3,4,5,6,7,8,9,10];
+       const sum = arr1.reduce((acc,mov,i,arr)=> {
+           acc = acc + mov; // doing addition so acc is taken as 0
+           return acc;
+       }, 0)
+
+       console.log(sum);
+ 
+       // using multiplication = *
+       let arr2 = [2,4,6];
+       const mul = arr2.reduce((acc,mov,i,arr) => {
+           acc = acc * mov;
+           return acc
+       }, 1)
+       console.log(mul); // 48 (2*4 =8, 8*6 = 48) only final answer will come that is 48
+
+       // Other than Numbers
+       // any number greater then 6 its should result as - true 
+       
+
+       const check = arr1.reduce((acc,mov) => {
+           if(mov > 6){  // change the number her, if use >= 10 then it shows true 
+               acc = true
+           }
+           return acc;
+
+       }, false)
+       console.log(check) // in the given array there is no greater than 10 // so its flase
+
+
+       console.log(`--------- using Reducd Method - single line code ---------`); 
+
+       const sum1 = arr1.reduce ((acc,mov,i,arr) =>{
+           return arr1
+       },0);
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

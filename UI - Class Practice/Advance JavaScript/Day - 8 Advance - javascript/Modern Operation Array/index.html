@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modren Opertion - Array</title>
+</head>
+<body>
+    <script>
+        // Find
+        // input must be in an array
+
+        console.log(`--------- Find ----------`)
+
+        const arr = [4,5,9,3,8,10];
+
+        const res = arr.find(mov => {
+            return mov > 5;
+        })
+        console.log(res); // 9 becs it check which is first so it results = 9
+
+
+        // findIndex
+
+        console.log(`--------- findIndex ----------`)
+
+        const res2 = arr.findIndex(mov => {
+            return mov > 5
+        })
+        console.log(res2); // index of 9 is 2 - becs here 9 is > than 5
+    
+    // some
+
+    console.log(`--------- some ----------`)
+
+    const x = arr.some(mov => {
+        return mov > 5;
+    })
+
+    console.log(x); // true
+
+    console.log(`--------- some in single line code ----------`)
+    
+    const x1 = arr.some((mov ) => mov > 4);
+    console.log(x1);
+    
+    // every
+
+    console.log(`--------- every ----------`)
+
+    const y = arr.every(mov =>{
+        return mov > 4
+    })
+    console.log(y);
+
+    console.log(`--------- every in single line code ----------`)
+    
+    const y1 = arr.every((mov ) => mov > 5);
+    console.log(y1);
+
+
+    
+    
+    
+    
+    
+    
+    
+    </script>
+
+    
+    
+</body>
+</html>

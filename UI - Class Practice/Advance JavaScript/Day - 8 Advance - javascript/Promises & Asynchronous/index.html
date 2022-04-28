@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises & Asynchronous</title>
+</head>
+<body>
+    <script>
+        // whcih is print commonly
+        console.log(`x`);  // this is called sychronous 
+
+
+        // this is called asychronous 
+        setTimeout(() => {
+            console.log(`a`);
+
+        }, 1000); // which excuites after 1 seconds(1000), so it result at last
+
+
+        // function
+
+        function add () {
+            console.log (`b`); // this is called sychronous 
+        }
+        add ();
+        
+        console.log(`y`);// this is called sychronous 
+        console.log(`z`);// this is called sychronous 
+
+
+    console.log(`--------- Promises ---------`);
+
+    // Promise is an object that is used as placeholder for the future result of an asynchronous operation
+
+    // Build a simple promises
+
+    const lotteryPromises = new Promise (function(resolve, reject){  // write an anounumous function
+    if (Math.random() >= 0.5){
+     resolve(`You win the Lottery!`);
+    } else {
+     reject(`You lost your money!`);
+    }
+ });
+
+    lotteryPromises
+    .then((res) => {
+        console.log(res);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+
+    console.log(`--------- Math - which prints random number ---------`);
+    
+    const num = Math.random ();
+    console.log(num);
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
